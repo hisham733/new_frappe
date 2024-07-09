@@ -10,6 +10,9 @@ COPY install_erpnext.sh /install_erpnext
 COPY install_app.sh /install_app
 COPY prepare_production.sh /prepare_production
 
+# Copy custom ERPNext changes
+COPY ./custom_erpnext /home/frappe/frappe-bench/apps/erpnext
+
 # Install frappe
 RUN /install_frappe ${FRAPPE_BRANCH} && \
   # Install erpnext
